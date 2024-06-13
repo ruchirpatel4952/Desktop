@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/general.js"></script>
+    <title>Our Team - Kind Hearts</title>
+</head>
+
+<body class="odd-section">
+    <div id="app">
+        <header>
+            <nav class="topnav d-flex" id="topnav">
+                <a href="#" class="logo">
+                    <img src="./img/logo.png" alt="Logo">
+                </a>
+                <a href="/index.html">Home</a>
+                <a href="/about.html">About Us</a>
+                <a href="/team.html" class="active">Team</a>
+                <a href="/opportunities.html">Find Opportunities</a>
+                <a href="/dashboard.html" v-if="isLoggedIn" > Dashboard</a>
+                <a href="/faq1">faq</a>
+                <a class="ml-auto btn align-self-auto" v-if="isLoggedIn" onclick="logOut()">Logout</a>
+                <a class="ml-auto btn align-self-auto" v-else href="/login.html">Login</a>
+                <button type="button" class="icon" onclick="toggle()"><i class="fa fa-bars"></i></button>
+            </nav>
+        </header>
+
+
+
+    <section class="container mt-5 col-10">
+        <h2><b>Our Team</b></h2>
+        <div class="row">
+            <div class="col-md-3 team-card">
+                <div class="card">
+                    <img class="card-img-top" height="350" src="./img/ruchir.jpg" alt="Team Member Photo">
+                    <div class="card-body">
+                        <h5 class="card-title">Ruchir</h5>
+                        <p class="card-text">Ruchir is a talent acquisition officer with over 10 years of experience in
+                            corporate management.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 team-card">
+                <div class="card">
+                    <img class="card-img-top" height="350" src="./img/ishika.jpg" alt="Team Member Photo">
+                    <div class="card-body">
+                        <h5 class="card-title">Ishika</h5>
+                        <p class="card-text">Ishika specializes in community outreach and has helped expand our network
+                            significantly.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 team-card">
+                <div class="card">
+                    <img class="card-img-top" height="350" src="./img/atharva.jpg" alt="Team Member Photo">
+                    <div class="card-body">
+                        <h5 class="card-title">Atharva</h5>
+                        <p class="card-text">Atharva is dedicated to environmental causes and brings a wealth of
+                            knowledge to our projects.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 team-card">
+                <div class="card">
+                    <img class="card-img-top" height="350" src="./img/zulfi.jpg" alt="Team Member Photo">
+                    <div class="card-body">
+                        <h5 class="card-title">Zulfi</h5>
+                        <p class="card-text">Zulfi is a passionate coordinator with over 10 years of experience in
+                            volunteering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p>Contact us at kindhearts@gmail.com | Follow us on social media</p>
+    </footer>
+</div>
+    <script>
+        const toggle = () => {
+            const nav = document.getElementById("topnav");
+            nav.className === "topnav" ? nav.className += " responsive" : nav.className = "topnav";
+        };
+    </script>
+    <script src="./js/team.js"></script>
+</body>
+
+</html>

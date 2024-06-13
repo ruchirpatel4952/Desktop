@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/x-icon" href="./img/logo.png">
+  <script src="./js/general.js"></script>
+  <title>About Us - Kind Hearts</title>
+</head>
+
+<body>
+
+  <div id="app">
+  <header>
+    <nav class="topnav d-flex" id="topnav">
+        <a href="#" class="logo">
+            <img src="./img/logo.png" alt="Logo">
+        </a>
+        <a href="/index.html">Home</a>
+        <a href="/about.html" class="active">About Us</a>
+        <a href="/team.html">Team</a>
+        <a href="/opportunities.html">Find Opportunities</a>
+        <a href="/dashboard.html" v-if="isLoggedIn"> Dashboard</a>
+        <a href="/faq.html">faq</a>
+        <a class="ml-auto btn align-self-auto" v-if="isLoggedIn" onclick="logOut()">Logout</a>
+        <a class="ml-auto btn align-self-auto" v-else href="/login.html">Login</a>
+        <button type="button" class="icon" onclick="toggle()"><i class="fa fa-bars"></i></button>
+    </nav>
+</header>
+
+  <section id="our_mission" class="odd-section">
+    <div class="d-flex item-stretch pt-7 pb-real-4">
+      <div class="col-6">
+        <h4 class="pb-0 mx-2">Our Mission</h4>
+        <p class="mt-2 mx-2">At Kind Hearts, our mission is to connect volunteers with opportunities to make a tangible
+          impact in their communities. We believe in the power of collective effort and strive to create a platform
+          where individuals can come together to contribute to various causes.</p>
+      </div>
+      <div class="col-6 text-center m-auto">
+        <img width="200" class="rounded w-85 mx-2" src="./img/product launch_solid II.svg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section id="our_story">
+    <div class="d-flex item-stretch pt-7 pb-real-4">
+      <div class="col-6 text-center m-auto">
+        <img width="200" class="rounded w-85 mx-2" src="./img/support_solid I.svg" alt="">
+      </div>
+      <div class="col-6 text-start">
+        <h4 class="pb-0 mx-2">Our Story</h4>
+        <p class="mt-2 mx-2">Kind Hearts was founded in 2020 by a group of passionate individuals who wanted to create a
+          positive change in their community. Over the years, we have grown into a network of dedicated volunteers who
+          work tirelessly to support local initiatives and help those in need.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="what_we_do" class="odd-section">
+    <div class="d-flex item-stretch pt-7 pb-real-4">
+      <div class="col-6 text-start">
+        <h4 class="pb-0 mx-2">What We Do</h4>
+        <p class="mt-2 mx-2">We organize various volunteer activities such as park cleanups, food drives, and community
+          events. Our goal is to create opportunities for people to give back to their community and make a difference
+          in
+          the lives of others.</p>
+      </div>
+      <div class="col-6 text-center m-auto">
+        <img width="200" class="rounded w-85 mx-2" src="./img/eCommerce_solid III.svg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact us at <a href="mailto:kindhearts@gmail.com">kindhearts@gmail.com</a> | Follow us on social media</p>
+    <div class="social-icons">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  </div>
+  <script>
+    const toggle = () => {
+      const nav = document.getElementById("topnav");
+      nav.className === "topnav" ? nav.className += " responsive" : nav.className = "topnav";
+    };
+  </script>
+      <script src="./js/about.js"></script>
+
+</body>
+
+</html>

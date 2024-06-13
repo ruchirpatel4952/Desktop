@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
+
+    <script src="./js/general.js"></script>
+    <title>Dashboard - Kind Hearts</title>
+</head>
+
+<body class="odd-section">
+    <div id="app">
+        <div class="modal" id="events">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Create Event</h5>
+                  <button type="button" class="close" aria-label="Close" v-on:click="close_event()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                        <input type="text" id="event_title" class="form-control mb-1 pr-0 text-start" placeholder="Event title"
+                            required autofocus>
+
+                        <input type="text" id="event_description" class="form-control pr-0 text-start" placeholder="Event description" name="event_description"
+                            required>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" v-on:click="create_event()" class="btn btn-primary">Create</button>
+                  <button type="button" class="btn btn-secondary" v-on:click="close_event()">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" id="opportunities">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Create Opportunity</h5>
+                  <button type="button" class="close" aria-label="Close" v-on:click="close_opportunity()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                        <input type="text" id="opportunity_title" class="form-control mb-1 pr-0 text-start" placeholder="Opportunity title"
+                            required autofocus>
+
+                        <input type="text" id="opportunity_description" class="form-control pr-0 text-start" placeholder="Opportunity description" name="opportunity_description"
+                            required>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" v-on:click="create_opportunity()" class="btn btn-primary">Create</button>
+                  <button type="button" class="btn btn-secondary" v-on:click="close_opportunity()">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <header>
+            <nav class="topnav d-flex" id="topnav">
+                <a href="#" class="logo">
+                    <img src="./img/logo.png" alt="Logo">
+                </a>
+                <a href="/index.html">Home</a>
+                <a href="/about.html">About Us</a>
+                <a href="/team.html">Team</a>
+                <a href="/opportunities.html">Find Opportunities</a>
+                <a href="/dashboard.html" class="active"> Dashboard</a>
+                <a href="/faq.html">faq</a>
+                <a class="ml-auto btn align-self-auto" v-if="isLoggedIn" onclick="logOut()">Logout</a>
+                <a class="ml-auto btn align-self-auto" v-else href="/login.html">Login</a>
+                <button type="button" class="icon" onclick="toggle()"><i class="fa fa-bars"></i></button>
+            </nav>
+        </header>
+        <div class="container col-10">
+            <div class="card p-5 m-1">
+                <h2>Welcome, {{ first_name }}!</h2>
+                <p>Here's a summary of your recent activities and upcoming events.</p>
+            </div>
+
+            <div class="card p-5 m-1">
+                <div class="m-1">
+                    <div class="d-flex text-space-between">
+                        <h3>Your Profile</h3>
+                        <a class="btn btn-primary float-end" href="./updatepass.html">Update Password</a>
+                    </div>
+
+                    <p>Name: {{ first_name }}</p>
+                    <p>Email: {{ email }}</p>
+                </div>
+            </div>
+
+            <div class="card p-5 m-1">
+                <div class="d-flex m-1 text-space-between">
+                    <h3>Upcoming Events</h3>
+                    <button class="btn btn-primary float-end" type="button" v-on:click="show_event()">Create Event</button>
+                </div>
+                <div class="d-flex text-space-around">
+                    <div class="event" v-for="event in event_data">
+                        <h4>{{ event.event_title }}</h4>
+                        <p>{{ event.event_description }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-5 m-1">
+                <div class="d-flex m-1 text-space-between">
+                    <h3>Recent Opportunities</h3>
+                    <button class="btn btn-primary float-end" type="button" v-on:click="show_opportunity()">Create Opportunity</button>
+                </div>
+                <div class="d-flex text-space-around">
+                    <div class="activity" v-for="opportunity in opportunity_data">
+                        <h4>{{ opportunity.opportunity_title }}</h4>
+                        <p>{{ opportunity.opportunity_description }}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="bg-dark text-white text-center p-3 mt-5">
+            <p>Contact us at <a href="mailto:kindhearts@gmail.com">kindhearts@gmail.com</a> | Follow us on social media
+            </p>
+            <div class="social-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+        </footer>
+
+    </div>
+    <script>
+        const toggle = () => {
+            const nav = document.getElementById("topnav");
+            nav.className === "topnav" ? nav.className += " responsive" : nav.className = "topnav";
+        };
+    </script>
+    <script src="./js/dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/newstyle.css">
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
+
+    <script src="./js/signup.js"></script>
+    <title>Kind Hearts</title>
+</head>
+
+<body>
+    <div id="app" class="signup-body text-center" style="height: inherit;">
+        <form class="form-signin container col-4">
+            <img class="mb-4" src="./img/logo.png" alt="" width="72"
+                height="72">
+            <h1 class="h3 mb-3">Please sign up</h1>
+
+            <input type="text" id="inputFirstName" class="form-control mb-1" placeholder="First Name" required
+             name="fname">
+
+            <input type="text" id="inputLastName" class="form-control mb-1" placeholder="Last Name" required autofocus name="lname">
+
+            <input type="text" id="inputRole" class="form-control mb-1" placeholder="Role" required autofocus name="role">
+
+            <input type="email" id="inputEmail" class="form-control mb-1" placeholder="Email address" required autofocus name="email">
+
+            <input type="password" id="inputPassword" class="form-control mb-1" placeholder="Password" required name="password">
+
+            <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required name="cpassword">
+
+            <button class="btn btn-lg btn-primary btn-block" type="button" onclick="createUser()">Sign up</button>
+            <p class="mt-2">Existing Login? <a href="/login.html" me>Signin</a></p>
+        </form>
+    </div>
+
+</body>
+
+</html>

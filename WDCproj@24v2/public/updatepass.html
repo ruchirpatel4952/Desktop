@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/newstyle.css">
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
+    <script src="./js/general.js"></script>
+    <title>Kind Hearts</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="signup-body text-center" style="height: inherit;">
+            <form class="form-signin container col-4" action="/updatepassword" method="post">
+                <img class="mb-4" src="./img/logo.png" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Please change password</h1>
+
+                <input type="email" id="inputEmail" class="form-control mb-1" placeholder="Email address" name="email"
+                    required autofocus>
+
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="newPassword"
+                    required>
+                <input type="password" id="inputPassword2" class="form-control" placeholder="Confirm Password"
+                    name="password" required>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Change password</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="./js/updatepass.js"></script>
+</body>
+
+</html>

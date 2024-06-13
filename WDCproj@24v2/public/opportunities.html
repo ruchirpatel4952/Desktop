@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="./img/logo.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/general.js"></script>
+  <title>Kind Hearts</title>
+</head>
+
+<body class="odd-section h-100">
+  <div id="app">
+
+    <header>
+      <nav class="topnav d-flex" id="topnav">
+        <a href="#" class="logo">
+          <img src="./img/logo.png" alt="Logo">
+        </a>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/team.html">Team</a>
+        <a href="/opportunities.html" class="active">Find Opportunities</a>
+        <a href="/dashboard.html" v-if="isLoggedIn"> Dashboard</a>
+        <a href="/faq.html">faq</a>
+        <a class="ml-auto btn align-self-auto" v-if="isLoggedIn" onclick="logOut()">Logout</a>
+        <a class="ml-auto btn align-self-auto" v-else href="/login.html">Login</a>
+        <button type="button" class="icon" onclick="toggle()"><i class="fa fa-bars"></i></button>
+      </nav>
+    </header>
+
+    <section class="container mt-5 col-10 h-100">
+      <h2><b>Finding Opportunities</b></h2>
+      <div class="row">
+        <div class="col-md-3 team-card" v-for="opportunity in opportunity_data">
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ opportunity.opportunity_title }}</h5>
+              <p class="card-text">{{ opportunity.opportunity_description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+      <p>Contact us at kindhearts@gmail.com | Follow us on social media</p>
+    </footer>
+  </div>
+
+
+  <script>
+    const toggle = () => {
+      const nav = document.getElementById("topnav");
+      nav.className === "topnav" ? nav.className += " responsive" : nav.className = "topnav";
+    };
+  </script>
+  <script src="./js/opportunites.js"></script>
+</body>
+
+</html>

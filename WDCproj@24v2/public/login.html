@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/newstyle.css">
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
+    <script src="./js/general.js"></script>
+
+    <title>Kind Hearts</title>
+</head>
+<body>
+    <div id="app" style="height: 100%;">
+        <div class="signup-body text-center" style="height: inherit;">
+            <form class="form-signin container col-4">
+                <img class="mb-4" src="./img/logo.png" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+                <input type="email" id="inputEmail" class="form-control mb-1" placeholder="Email address" name="email"
+                    required autofocus>
+
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password"
+                    required>
+                <div class="mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="button" v-on:click="verifyUser()">Sign
+                    in</button>
+                <p class="mt-2">New here? <a href="./signup.html">Signup</a></p>
+                <p class="mt-2">forgot password? <a href="./updatepass.html">change</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

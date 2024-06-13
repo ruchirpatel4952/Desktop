@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="./img/logo.png">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="./js/general.js"></script>
+  <title>Kind Hearts</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <header>
+      <nav class="topnav d-flex" id="topnav">
+          <a href="#" class="logo">
+              <img src="./img/logo.png" alt="Logo">
+          </a>
+          <a href="/index.html" class="active">Home</a>
+          <a href="/about.html">About Us</a>
+          <a href="/team.html">Team</a>
+          <a href="/opportunities.html">Find Opportunities</a>
+          <a href="/dashboard.html" v-if="isLoggedIn" > Dashboard</a>
+          <a href="/faq.html">faq</a>
+          <a class="ml-auto btn align-self-auto" v-if="isLoggedIn" onclick="logOut()">Logout</a>
+          <a class="ml-auto btn align-self-auto" v-else href="/login.html">Login</a>
+          <button type="button" class="icon" onclick="toggle()"><i class="fa fa-bars"></i></button>
+      </nav>
+  </header>
+
+
+    <section class="odd-section">
+      <div class="d-flex item-stretch pt-7 pb-real-4">
+        <div class="col-6">
+          <h4 class="pb-0 mx-2">Make a Difference in Your Community with <b>Kind Hearts</b>.</h4>
+
+          <p class="mt-2 mx-2">Join our network of volunteers to help make the world a better place.</p>
+          <a class="mt-3 mx-2 btn btn-primary" href="./login.html">Join Now</a>
+        </div>
+        <div class="col-6 text-center m-auto">
+          <img width="200" class="rounded w-85 mx-2" src="./img/team at work_solid I.svg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="d-flex item-stretch pt-7 pb-real-4">
+        <div class="col-6 text-center m-auto">
+          <img width="200" class="rounded w-85 mx-2" src="./img/team_solid III.svg" alt="">
+        </div>
+        <div class="col-6 text-start">
+          <h4 class="pb-0 mx-2">About Us</h4>
+          <p class="mt-2 mx-2">We connect volunteers with opportunities to make a tangible impact in their communities.
+          </p>
+          <a class="mt-3 mx-2 btn btn-primary" href="/about.html">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="opportunities" class="odd-section">
+      <h3>Volunteer Opportunities</h3>
+      <div class="d-flex mb-4">
+        <div class="col-almost-6 opportunity mr-1 rounded">
+          <h4>Park Cleanup</h4>
+          <p>Help clean up your local park this weekend!</p>
+          <a href="/login.html" class="my-5 btn btn-primary">Sign up</a>
+        </div>
+        <div class="col-almost-6 opportunity ml-1 rounded">
+          <h4>Food Drive</h4>
+          <p>Assist in collecting and distributing food to those in need.</p>
+          <a href="/login.html" class="my-5 btn btn-primary">Sign up</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Contact us at <a href="mailto:kindhearts@gmail.com">kindhearts@gmail.com</a> | Follow us on social media</p>
+    </footer>
+  </div>
+
+  <script>
+    const toggle = () => {
+      const nav = document.getElementById("topnav");
+      nav.className === "topnav" ? nav.className += " responsive" : nav.className = "topnav";
+    };
+  </script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

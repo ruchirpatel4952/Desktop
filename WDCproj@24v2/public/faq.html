@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/x-icon" href="./img/logo.png">
+  <script src="./js/general.js"></script>
+  <title>FAQ - Kind Hearts</title>
+</head>
+
+<body>
+<div id="app">
+
+  <header>
+    <nav class="topnav d-flex" id="topnav">
+        <a href="#" class="logo">
+            <img src="./img/logo.png" alt="Logo">
+        </a>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/team.html">Team</a>
+        <a href="/opportunities.html">Find Opportunities</a>
+        <a href="/dashboard.html" v-if="isLoggedIn" > Dashboard</a>
+        <a href="/faq.html" class="active">faq</a>
+        <a class="ml-auto btn align-self-auto" v-if="isLoggedIn" onclick="logOut()">Logout</a>
+        <a class="ml-auto btn align-self-auto" v-else href="/login.html">Login</a>
+        <button type="button" class="icon" onclick="toggle()"><i class="fa fa-bars"></i></button>
+    </nav>
+</header>
+
+<section id="our_mission" class="odd-section">
+  <div class="item-stretch pt-7 pb-real-4">
+    <div class="col-12">
+      <h2 class="pb-0 mx-2">Frequently Asked Questions</h2>
+    </div>
+  </div>
+</section>
+
+
+  <section class="container faq-content col-10">
+    <h2>General Questions</h2>
+    <div class="faq">
+      <p class="faq-question" onclick="toggleAnswer(this)">What is Kind Hearts?</p>
+      <p class="faq-answer">Kind Hearts is a platform that connects volunteers with opportunities to make a tangible impact in their communities.</p>
+    </div>
+    <div class="faq">
+      <p class="faq-question" onclick="toggleAnswer(this)">How can I get involved with Kind Hearts?</p>
+      <p class="faq-answer">You can sign upon our website to become a volunteer and start participating in our activities.</p>
+    </div>
+    <div class="faq">
+      <p class="faq-question" onclick="toggleAnswer(this)">Is there a fee to join Kind Hearts?</p>
+      <p class="faq-answer">No, Kind Hearts is a free platform for volunteers and organizations.</p>
+    </div>
+
+    <h2>Volunteer Questions</h2>
+    <div class="faq">
+      <p class="faq-question" onclick="toggleAnswer(this)">What kind of activities can I participate in as a volunteer?</p>
+      <p class="faq-answer">We organize various volunteer activities such as park cleanups, food drives, and community events.</p>
+    </div>
+    <div class="faq">
+      <p class="faq-question" onclick="toggleAnswer(this)">How do I sign up for a volunteer activity?</p>
+      <p class="faq-answer">You can sign up for a volunteer activity on our website by clicking on the "Find Opportunities" tab and selecting the activity you want to participate in.</p>
+    </div>
+    <div class="faq">
+      <p class="faq-question" onclick="toggleAnswer(this)">Can I suggest a volunteer activity?</p>
+      <p class="faq-answer">Yes, you can suggest a volunteer activity by contacting us at kindhearts@gmail.com.</p>
+    </div>
+
+    <h2>Organization Questions</h2>
+    <div class="faq">
+      <p class="faq-question" onclick="toggleAnswer(this)">How can my organization partner with Kind Hearts?</p>
+      <p class="faq-answer">You can contact us at kindhearts@gmail.com to discuss partnership opportunities.</p>
+    </div>
+    <div class="faq">
+      <p class="faq-question" onclick="toggleAnswer(this)">How does Kind Hearts support organizations?</p>
+      <p class="faq-answer">Kind Hearts supports organizations by promoting their volunteer opportunities and connecting them with dedicated volunteers.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact us at <a href="mailto:kindhearts@gmail.com">kindhearts@gmail.com</a> | Follow us on social media</p>
+    <div class="social-icons">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+  </footer>
+
+</div>
+<script>
+  const toggle = () => {
+    const nav = document.getElementById("topnav");
+    nav.className === "topnav" ? nav.className += " responsive" : nav.className = "topnav";
+  };
+
+  const toggleAnswer = (question) => {
+    const answer = question.nextElementSibling;
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  };
+</script>
+<script src="./js/faq.js"></script>
+</body>
+
+</html>
